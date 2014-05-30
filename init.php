@@ -65,6 +65,10 @@ class Af_Reddit extends Plugin {
 
 							$article["content"] = '<a href="' . $target_page . '" target="_blank"><img src="' . $target_page . '"></a>';
 							$found = TRUE;
+						} else if (strpos($target_page, "://www.livememe.com/") !== FALSE) {
+							$new_target_page = str_replace("://www.livememe.com/", "://i.lvme.me/", $target_page);
+							$article["content"] = '<a href="' . $target_page . '" target="_blank"><img src="' . $new_target_page . '.jpg"></a>';
+							$found = TRUE;
 						}
 
 						if ($found) {
