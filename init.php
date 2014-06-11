@@ -37,6 +37,11 @@ class Af_Reddit extends Plugin {
 						$links = $xpath->query('//a[contains(.,"[link]")]');
 						$target_page = $links->item(0)->getAttribute("href");
 
+						if (strpos($target_page, "#") !== FALSE) {
+							$target_page_parts = explode('#', $target_page);
+							$target_page = $target_page_parts[0];
+						}
+
 						if (strpos($target_page, "://i.imgur.com/") !== FALSE) { // imgur single image
 
 							// Fixes broken links like https://i.imgur.com/kD6Ay9h
