@@ -5,7 +5,7 @@ class Af_Reddit extends Plugin {
 	private $host;
 
 	function about() {
-		return array(1.0,
+		return array(1.1,
 			"Improve content of Reddit RSS feeds",
 			"kuc");
 	}
